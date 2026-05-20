@@ -1,0 +1,40 @@
+{
+  "name": "wacrm",
+  "compatibility_date": "2026-05-01",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "pages_build_output_dir": ".next",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "wacrm-d1",
+      "database_id": "7320436d-1a89-4089-9dbb-8260a92023ee",
+      "migrations_dir": "drizzle/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "STORAGE",
+      "bucket_name": "wacrm-storage"
+    }
+  ],
+  "send_email": [
+    {
+      "name": "SEND_EMAIL"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "REALTIME",
+        "class_name": "TenantRealtimeHub"
+      }
+    ]
+  },
+  "triggers": {
+    "crons": [
+      "*/1 * * * *"
+    ]
+  }
+}
